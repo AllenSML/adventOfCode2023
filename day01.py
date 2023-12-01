@@ -22,15 +22,15 @@ ans = 0
 digits = "one two three four five six seven eight nine".split()
 
 d2n = dict((digit, str(i)) for digit, i in zip(digits, range(1,10)))
-p = "(?=(" + "|".join(digits) + "|\\d))"
+regExp = "(?=(" + "|".join(digits) + "|\\d))"
 
 def help(x):
     if x in d2n:
         return d2n[x]
     return x
 
-for x in lines:
-    digits = [*map(help, re.findall(p, x))]
+for line in lines:
+    digits = [*map(help, re.findall(regExp, line))]
     ans += int(digits[0] + digits[-1])
 
 print("part2:", ans)

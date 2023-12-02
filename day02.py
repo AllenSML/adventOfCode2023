@@ -23,7 +23,7 @@ for line in lines:
                 break            
         if not valid:
             break
-    if valid:
+    else:
         ans += int(id)
     
 print("part1:", ans)   

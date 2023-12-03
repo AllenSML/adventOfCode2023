@@ -12,7 +12,7 @@ n = len(lines[0])
 gears = defaultdict(list)   
 
 def getNeighbors(x,y, nbs):
-    currentNbs = [(x-1,y),(x+1,y),(x,y-1),(x,y+1), (x-1,y-1), (x+1,y+1), (x+1, y-1), (x-1, y+1)]    
+    currentNbs = [(x-1,y),(x+1,y),(x,y-1),(x,y+1), (x-1,y-1), (x+1,y+1), (x+1,y-1), (x-1,y+1)]    
     for dx, dy in currentNbs:
         if dx >= 0 and dx < m and dy >= 0 and dy < n:
             nbs.add((dx,dy))    

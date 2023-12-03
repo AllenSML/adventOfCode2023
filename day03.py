@@ -11,7 +11,7 @@ m = len(lines)
 n = len(lines[0])
 gears = defaultdict(list)   
 
-def getNeighbors(x,y, nbs):
+def getNeigbours(x,y, nbs):
     currentNbs = [(x-1,y),(x+1,y),(x,y-1),(x,y+1), (x-1,y-1), (x+1,y+1), (x+1,y-1), (x-1,y+1)]    
     for dx, dy in currentNbs:
         if dx >= 0 and dx < m and dy >= 0 and dy < n:
@@ -37,7 +37,7 @@ for row, line in enumerate(lines):
     for col, c in enumerate(line):
         if c.isdigit():
             part = part + c if part else c
-            getNeighbors(row, col, nbs)
+            getNeigbours(row, col, nbs)
         elif not c.isdigit():
             if part:
                 if isValidPart(nbs):

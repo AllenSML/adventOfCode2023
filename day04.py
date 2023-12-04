@@ -11,7 +11,7 @@ res = 0
 c2n = [ 1 for _ in range(len(lines))]
 
 for id, line in enumerate(lines):
-    p_ = len(functools.reduce(lambda x,y: x & y,   [set(p.strip().split()) for p in line.split(":")[1].strip().split("|")]))
+    p_ = len(functools.reduce(lambda x,y: x & y,[set(p.strip().split()) for p in line.split(":")[1].strip().split("|")]))
     res = res + (2**(p_-1) if p_ > 0 else 0)
     for _ in range (p_):
         c2n[_+1+id] += 1 * c2n[id]

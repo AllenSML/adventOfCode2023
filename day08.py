@@ -24,12 +24,5 @@ for direction in cycle(nav):
         break
 
 print("part1: ", step)
-    
-
-
-
-    
-    
-
 
 

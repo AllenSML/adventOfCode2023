@@ -37,9 +37,3 @@ for val in mem.values():
     lcm = lcm * val // math.gcd(lcm, val)
     
 print("part2: ", lcm)
-
-    
-    
-
-
-

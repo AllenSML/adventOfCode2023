@@ -9,7 +9,7 @@ lines = open(str(cur_dir)+file_name).read().split("\n")
 
 cards = list('AKQJT98765432J')
 weights = dict((c, i ) for c, i in zip(cards, range(13, -1, -1)))
-print(weights)
+
 hands = list()
 for line in lines:
     hand, bid = line.split()

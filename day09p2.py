@@ -23,4 +23,3 @@ for line in lines:
     res += start
     
 print("part2: ", res)   
-

@@ -20,4 +20,3 @@ for line in lines:
     res += append
 
 print("part1: ", res)   
-

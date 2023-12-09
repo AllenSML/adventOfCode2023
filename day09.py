@@ -19,4 +19,4 @@ for line in lines:
         line = newLine
     res += append
 
-print("part1: ", res)   
+print("part1: ", res)  

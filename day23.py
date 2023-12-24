@@ -31,11 +31,11 @@ def dfs(route, pos, visited):
         return
     # do not mark the last tile if it is the exit
     for dx, dy in [(0,1),(0,-1),(1,0),(-1,0)]:
-        x_ = x + dx
-        y_ = y + dy
-        if (x_,y_) not in visited:
-            if route[x_][y_] != "#":
-                dfs(route, (x_,y_), visited.copy())
+        nx = x + dx
+        ny = y + dy
+        if (nx, ny) not in visited:
+            if route[nx][ny] != "#":
+                dfs(route, (nx,ny), visited.copy())
             
 dfs(route, (0,1), set())
 print("part1: ", ans)

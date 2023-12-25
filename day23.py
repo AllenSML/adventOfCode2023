@@ -23,19 +23,14 @@ def dfs(route, pos, visited):
         return         
     visited.add(pos)
     
-    if route[x][y] in "^>v<":
-        nx, ny = x + di[route[x][y]][0], y + di[route[x][y]][1]
-        if (nx, ny) not in visited:
-            if route[nx][ny] != "#":
-                dfs(route, (nx,ny), visited.copy())
-        return
-    # do not mark the last tile if it is the exit
-    for dx, dy in [(0,1),(0,-1),(1,0),(-1,0)]:
+    nbs = [(0,1),(0,-1),(1,0),(-1,0)] if route[x][y] not in "^>v<" else [di[route[x][y]]]
+    for dx, dy in nbs:
         nx = x + dx
         ny = y + dy
         if (nx, ny) not in visited:
             if route[nx][ny] != "#":
-                dfs(route, (nx,ny), visited.copy())
-            
+                dfs(route, (nx,ny), visited)
+    visited.remove(pos)
+    
 dfs(route, (0,1), set())
 print("part1: ", ans)
